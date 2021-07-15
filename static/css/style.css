@@ -1,3 +1,25 @@
 body {
-    background-color: green;
+    margin: 0;
+
+    background: rgb(213,9,43);
+    background: linear-gradient(90deg, rgba(213,9,43,1) 0%, rgba(161,70,254,1) 100%); 
+    
+    min-height: 100vh;
+
+    font-family: 'Open Sans Condensed', sans-serif;
 }
+
+h1 {
+    margin: 0;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 3em;
+    letter-spacing: 1.5px;
+
+    text-align: center;
+    padding-top: .5em;
+    color: rgb(231, 231, 231);
+}
+    

@@ -2,13 +2,19 @@ from flask import Flask, render_template
 import platform
 import psutil
 
-app = Flask(__name__)
+from datetime import datetime
 
-uname = platform.uname()
+
+app = Flask(__name__)
+cislo = 10
+
 
 @app.route('/')
 def mainPage():
-    return render_template('index.html', system=platform.uname().system)
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+
+    return render_template('index.html', time=current_time)
 
 @app.route('/cpu')
 def cpuPage():
