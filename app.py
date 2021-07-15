@@ -5,8 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def mainPage():
-    return 'Flusk dockerized fork'
-
+    return "Docker funguje"
 
 if __name__ == '__main__':
     app.run(debug = True,

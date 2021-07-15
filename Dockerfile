@@ -8,4 +8,7 @@ RUN pip install Flask
 
 CMD ["python", "./app.py"]
 
+#prikazy potrebne na spustenie programu
+#docker build -t hardwareinfo .
 
+#docker run -p 5000:5000 hardwareinfo
