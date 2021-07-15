@@ -8,7 +8,7 @@ uname = platform.uname()
 
 @app.route('/')
 def mainPage():
-    return render_template('index.html', system=psutil.cpu_count(logical=False))
+    return render_template('index.html', system=platform.uname().system)
 
 @app.route('/cpu')
 def cpuPage():
