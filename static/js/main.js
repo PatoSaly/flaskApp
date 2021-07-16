@@ -1,15 +1,19 @@
 function show(id) {
+    let elemGeneral = document.getElementById('valuesGeneral');
+    let elemCpu = document.getElementById('valuesCpu');
+    let elemMemory = document.getElementById('valuesMemory');
+
     if (id === 'valuesGeneral') {
-        document.getElementById('valuesGeneral').style.visibility = "visible";
-        document.getElementById('valuesCpu').style.visibility = "hidden";
-        document.getElementById('valuesMemory').style.visibility = "hidden";
+        elemGeneral.style.visibility = "visible";
+        elemCpu.style.visibility = "hidden";
+        elemMemory.style.visibility = "hidden";
     } else if (id === 'valuesCpu') {
-        document.getElementById('valuesCpu').style.visibility = "visible";
-        document.getElementById('valuesGeneral').style.visibility = "hidden";
-        document.getElementById('valuesMemory').style.visibility = "hidden";
+        elemCpu.style.visibility = "visible";
+        elemGeneral.style.visibility = "hidden";
+        elemMemory.style.visibility = "hidden";
     } else if (id === 'valuesMemory') {
-        document.getElementById('valuesMemory').style.visibility = "visible";
-        document.getElementById('valuesGeneral').style.visibility = "hidden";
-        document.getElementById('valuesCpu').style.visibility = "hidden";
+       elemMemory.style.visibility = "visible";
+        elemGeneral.style.visibility = "hidden";
+        elemCpu.style.visibility = "hidden";
     }
 }

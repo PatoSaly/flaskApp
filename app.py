@@ -27,7 +27,6 @@ def mainPage():
                             cores=psutil.cpu_count(logical=True),
                             totalRam=conversion(svmem.total),
                             maxFreq= str(cpufreq.max) + 'Mhz',
-                            minFreq= str(cpufreq.min) + 'Mhz',
                             currFreq= str(cpufreq.current) + 'Mhz',
                             avRam= conversion(svmem.available),
                             usedRam = conversion(svmem.used),

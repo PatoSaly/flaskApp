@@ -26,5 +26,5 @@ CMD ["python", "./app.py"]
 #ukoncenie
 #docker stop work-app
 
-#odstranenie; potrebne pri opakovanom spusteni
+#odstranenie containeru s rovnakym nazvom; potrebne pri opakovanom spusteni
 #docker rm work-app
