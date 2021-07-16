@@ -4,13 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hlavna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">     <link rel="stylesheet" href="../static/css/style.css">
+    <title>Stáž</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../static/css/style.css">
+
 </head>
 <body>
-    <nav>
-        <li><a href="#">Patrik Šály</a></li>
-    </nav>
-    <h1 class="title">Aktuálne porformance identifikátory</h1>
+    <h1 class="title">Aktuálne performance identifikátory</h1>
+
+    <div class="container">
+        <div class="general" onclick="show('valuesGeneral')"> Všeobecné</div>
+        <div class="cpu"  onclick="show('valuesCpu')">Procesor</div>
+        <div class="memory"  onclick="show('valuesMemory')">Pamäť</div>
+        <div id="valuesGeneral" class="values">
+            <ul>
+                <li>Operačný systém: {{ system }}</li>
+                <li>Procesor: {{ processor }}</li>
+                <li>Počet jadier: {{ cores }}</li>
+                <li>Pamäť RAM: {{ totalRam }}</li>
+            </ul>
+        </div>
+
+        <div id="valuesCpu" class="values">
+            <ul>
+                <li>Procesor: {{ processor }}</li>
+                <li>Počet jadier: {{ cores }}</li>
+                <li>Maximálna frekvenica: {{ maxFreq }}</li>
+                <li>Minimálna frekvenica: {{ minFreq }}</li>
+                <li>Súčasná frekvenica: {{ currFreq }}</li>
+            </ul>
+        </div>
+
+        <div id="valuesMemory" class="values">
+            <ul>
+                <li>Pamäť RAM: {{ totalRam }}</li>
+                <li>K dispozícií: {{ avRam }}</li>
+                <li>Použitá: {{ usedRam }}</li>
+                <li>Použitá v %: {{ percRam }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <p class="info">Vebová stránka, ktorá zobrazuje jednoduché informácie o používanom zariadení.</p>
+
+    <footer>
+        <h3 class="author">
+            Patrik Šály
+        </h3>
+    </footer>
+
+    <script src="/static/js/main.js"></script>
 </body>
 </html>

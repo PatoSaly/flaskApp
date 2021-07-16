@@ -6,23 +6,33 @@ from datetime import datetime
 
 
 app = Flask(__name__)
-cislo = 10
+
+def conversion(num):
+    step = 1000.0
+    for size in ['bytes', 'KB', 'MB', 'GB', 'TB']:
+        if num < step:
+            return "%3.1f %s" % (num, size)
+        num /= step
 
 
 @app.route('/')
 def mainPage():
-    now = datetime.now()
-    current_time = now.strftime("%H:%M:%S")
+    uname = platform.uname()
+    svmem = psutil.virtual_memory()
+    cpufreq = psutil.cpu_freq()
 
-    return render_template('index.html', time=current_time)
-
-@app.route('/cpu')
-def cpuPage():
-    return "CPU"
-
-@app.route('/memory')
-def memoryPage():
-    return "MEMORY"
+    return render_template('index.html',
+                            system=uname.system,
+                            processor=uname.processor,
+                            cores=psutil.cpu_count(logical=True),
+                            totalRam=conversion(svmem.total),
+                            maxFreq= str(cpufreq.max) + 'Mhz',
+                            minFreq= str(cpufreq.min) + 'Mhz',
+                            currFreq= str(cpufreq.current) + 'Mhz',
+                            avRam= conversion(svmem.available),
+                            usedRam = conversion(svmem.used),
+                            percRam = str(svmem.percent) + '%'
+                            )
 
 if __name__ == '__main__':
     app.run(debug = True, host = "0.0.0.0")

@@ -21,5 +21,99 @@ h1 {
     text-align: center;
     padding-top: .5em;
     color: rgb(231, 231, 231);
+    width: 90%;
+    margin: 0 auto;
 }
-    
+
+.container {
+    background-color: rgb(231, 231, 231);
+    border-radius: .15em;
+    margin: 1.5em auto;
+    max-width: 42em;
+    display: grid;
+    grid-template-columns: 14em 14em 14em;
+    grid-template-rows: 4em 20em;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "general cpu memory"
+      "values values values";
+
+    -webkit-box-shadow: 0px 5px 12px 0px rgba(0,0,0,0.85); 
+    box-shadow: 0px 5px 12px 0px rgba(0,0,0,0.85);
+  }
+  
+  .general { grid-area: general; }
+  
+  .cpu { grid-area: cpu; }
+  
+  .memory { grid-area: memory; }
+  
+  .values { grid-area: values; }
+  
+.cpu,  
+.memory
+{
+    border-left: solid 1px black;
+    place-self: center stretch;   
+    text-align: center; 
+
+}
+
+.container,
+.general,
+.values {
+    place-self: center stretch;   
+    text-align: center; 
+}
+
+.values {
+    visibility: hidden;
+}
+
+/* .container,
+.general,
+.values,
+.cpu,  
+.memory {
+} */
+
+.general,
+.cpu,
+.memory {
+    color: #2d005b;
+}
+
+.general:hover,
+.cpu:hover,  
+.memory:hover {
+    cursor: pointer;
+    color: #400080;
+    text-decoration: underline;
+    letter-spacing: .5px;
+}
+
+li {
+    margin-bottom: 1em;
+    font-size: 1.1em;
+}
+
+.info {
+    color: rgb(231, 231, 231);
+    font-size: 1.2em;
+    max-width: 15em;
+    text-align: center;
+    margin: 1em auto;
+}
+
+footer {
+    position: absolute;
+    margin-top: 5em;
+}
+.author {
+    position: relative;
+    color: rgb(231, 231, 231);
+    font-weight: 400;
+    bottom: 5px;
+    left: 5px;
+}
